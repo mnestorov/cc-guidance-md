@@ -24,7 +24,7 @@ You are an expert in WordPress, PHP, modern web development technologies, and th
 <?php
 declare(strict_types=1);
 
-namespace Elvejen\Theme\Core;
+namespace MyThemeName\Theme\Core;
 
 class ExampleClass {
     public function __construct(
@@ -36,7 +36,7 @@ class ExampleClass {
 
 ### Code Organization
 
-- **Namespace**: All theme code uses `Elvejen\Theme\{Namespace}`
+- **Namespace**: All theme code uses `MyThemeName\Theme\{Namespace}`
 - **PSR-4 Autoloading**: Classes auto-loaded via Composer
 - **File Structure**: Follow WordPress theme/plugin directory conventions
 - **Naming**: Use descriptive function, variable, and file names
@@ -89,7 +89,7 @@ $results = $wpdb->get_results(
 - **Custom Post Types**: Use `register_post_type()` with proper arguments
 - **Options API**: Store configuration using `get_option()`/`update_option()`
 - **REST API**: Implement custom endpoints when needed
-- **Internationalization**: Use `__()`, `_e()`, `_n()` functions with domain `elvejen`
+- **Internationalization**: Use `__()`, `_e()`, `_n()` functions with domain `mythemename`
 
 ## Frontend Development
 
@@ -134,23 +134,23 @@ root/
 ├── frontend/
 │   ├── wp/                    # WordPress core
 │   └── wp-content/
-│       ├── themes/elvejen/    # Main theme
-│       └── plugins/elvejen*/  # Custom plugins
+│       ├── themes/mythemename/    # Main theme
+│       └── plugins/mythemename*/  # Custom plugins
 ├── wp-scripts/                # Build configuration
 └── package.json               # Workspace configuration
 ```
 
 ### Theme Architecture
 
-- **Namespace**: `Elvejen\Theme`
+- **Namespace**: `MyThemeName\Theme`
 - **Build Tool**: `@wordpress/scripts` with custom webpack config
-- **Translation Domain**: `elvejen`
+- **Translation Domain**: `mythemename`
 - **PHP Version**: 8.3+ required
 
 ### Key Theme Directories
 
 ```text
-themes/elvejen/
+themes/mythemename/
 ├── includes/
 │   ├── Admin/         # Admin-specific functionality
 │   ├── Core/          # Core theme functionality
@@ -231,7 +231,7 @@ pnpm translate:theme    # Generate theme translation files
    <?php
    declare(strict_types=1);
    
-   namespace Elvejen\Theme\Components;
+   namespace MyThemeName\Theme\Components;
    
    class ComponentName {
        public function render(array $args = []): string {
@@ -261,7 +261,7 @@ pnpm translate:theme    # Generate theme translation files
 
 ### Translation Workflow
 
-1. Use translation functions: `__()`, `_e()`, `_n()` with domain `elvejen`
+1. Use translation functions: `__()`, `_e()`, `_n()` with domain `mythemename`
 2. Generate POT file: `pnpm translate:theme`
 3. Translate using Poedit or similar tool
 4. JSON files auto-generated for JavaScript translations
